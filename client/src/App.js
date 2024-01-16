@@ -4,8 +4,13 @@ import { Login } from "./pages/Login";
 import { Home } from "./pages/Home/Home";
 import { SignUp } from "./pages/SignUp";
 import { useSelector } from "react-redux";
+import React from "react";
+import { Toaster } from "react-hot-toast";
+import { ProtectedRoute } from "./components/ProtectedRoute";
+import { PublicRoute } from "./components/PublicRoute";
 
-function App() {
+export default function App(props) {
+  
   const {loading} = useSelector(state => state.alerts)
 
   return (
@@ -15,12 +20,10 @@ function App() {
       </div>)}
       <Toaster position="top-center" reverseOrder={false}></Toaster>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login /> }/>
-        <Route path="/signup" element={<SignUp />} />
+        <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+        <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
+        <Route path="/signup" element={<PublicRoute><SignUp /></PublicRoute>} />
       </Routes>
     </BrowserRouter>
   );
 }
-
-export default App;
