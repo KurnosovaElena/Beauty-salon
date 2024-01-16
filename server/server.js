@@ -301,3 +301,13 @@ app.post("/login", async (req, res) => {
       .send({ message: "Error booking", success: false, error });
     }
   });
+  app.get("/get-appointments-by-user-id", authMiddleware, async (req, res) => {
+    try {
+      const appointments = await Appointment.find({ id: req.body.userId })
+        .populate('masterId'); 
+      res.status(201).send({ message: "appointments get successfully", success: true, data: appointments });
+    } catch (error) {
+      res.status(500).send({ message: "Error getting appointments", success: false, error });
+    }
+  });
+  
