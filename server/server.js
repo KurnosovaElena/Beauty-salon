@@ -310,4 +310,41 @@ app.post("/login", async (req, res) => {
       res.status(500).send({ message: "Error getting appointments", success: false, error });
     }
   });
+
+  app.get("/get-appointments-by-master-id", authMiddleware, async (req, res) => {
+    try {
+      const master = await Master.findOne({id: req.body.userId})
+      console.log(master)
+      const appointments = await Appointment.find({ masterId: master._id })
+        .populate('masterId'); 
+      res.status(201).send({ message: "appointments get successfully", success: true, data: appointments });
+    } catch (error) {
+      res.status(500).send({ message: "Error getting appointments", success: false, error });
+    }
+  });
+  
+  app.post("/change-appointment-status",authMiddleware, async (req, res) => {
+    try {
+      const {appointmentId, status} = req.body;
+      const appointment = await Appointment.findByIdAndUpdate(appointmentId, {
+        status,
+      })
+      const user = await User.findOne({ id: appointment.userId })
+      console.log(user)
+      const unseenNotifications = user.unseenNotifications;
+      unseenNotifications.push({
+        type: "appointment-status-changed",
+        message: `Your appointment status has been ${status}`,
+        onclickPath: "/appointments",
+      })
+      user.save()
+      res
+        .status(200)
+        .send({ message: "Appointment status updated successfully", success: true });
+    } catch (error) {
+      res
+        .status(500)
+        .send({ message: "Error updating appointment status", success: false, error });
+    }
+  });
   
