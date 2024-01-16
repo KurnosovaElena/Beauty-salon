@@ -114,3 +114,29 @@ app.post("/login", async (req, res) => {
       
     }
   });
+
+  app.post("/apply-master-account", authMiddleware, async (req, res) => {
+    try {
+      const newMaster = new Master({...req.body , status: "pending"})
+      await newMaster.save();
+      const adminUser = await User.findOne({ isAdmin: true})
+  
+      const unseenNotifications = adminUser.unseenNotifications
+      unseenNotifications.push({
+        type: "new-master-request",
+        message : `Пользователь ${newMaster.firstName} ${newMaster.lastName} подал заявку на становление мастером`,
+        data : {
+          masterId: newMaster._id,
+          name: newMaster.firstName + " " + newMaster.lastName
+        },
+        onсlickPath : "/admin/masters"
+      })
+      await User.findByIdAndUpdate(adminUser._id, { unseenNotifications });
+      res.status(200).send({ message: "Master account applied successfully" , success: true})
+    } catch (error) {
+      res
+        .status(500)
+        .send({ message: "Error applying master account", success: false, error });
+    }
+  });
+  
