@@ -5,6 +5,9 @@ const bodyParser = require("body-parser");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const moment = require('moment')
+const User = require("./models/userSchema");
+const authMiddleware = require("./middlewares/authMiddleware");
+
 
 const SECRET_KEY = 'super-secret-key'
 
@@ -87,5 +90,27 @@ app.post("/login", async (req, res) => {
         .send({ message: "Login successfull", success: true, data: token });
     } catch (error) {
       res.status(500).send({ message: "Error loggin in", success: false, error });
+    }
+  });
+
+  app.post("/get-user-info-by-id", authMiddleware, async (req, res) => {
+    try {
+      const user = await User.findOne({ _id: req.body._id });
+      user.password = undefined; 
+      if (!user) {
+        return res
+          .status(200)
+          .send({ message: "User does not exist", success: false });
+      } else {
+        res.status(200).send({
+          success: true,
+          data: user
+        });
+      }
+    } catch (error) {
+      res
+      .status(500)
+      .send({ message: "Error getting user info", success: false, error });
+      
     }
   });
