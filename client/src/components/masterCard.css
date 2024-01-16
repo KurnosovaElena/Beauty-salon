@@ -1,0 +1,20 @@
+.card-box-none-bore{
+    border: 2px solid rgb(00, 00, 00, 25%);
+    padding: 1%;
+    cursor: pointer;
+    padding-right: 10%;
+    border-radius: 5px;
+    padding-bottom: 0%;
+    width: fit-content;
+    margin-right: 3%;
+}
+
+.card-box-none-bore p{
+    color: rgb(00, 00, 00, 70%);
+}
+
+.card-title-1{
+    margin-bottom: 15% !important;
+    color: #590B11;
+    font-size: 26px;
+}
