@@ -1,13 +1,84 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+
+
+* {
+    overflow-x: hidden;
+  }
+
+.card{
+    border: none !important;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.name{
+    font-family: 'prata' !important;
+    color: #590B11 !important;
+}
+
+.card-title{
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-family: prata;
+    color: #590B11 !important;
+}
+
+label{
+    font-family: prata !important;
+    font-size: 14px !important;
+}
+
+.link{
+    margin-top: 0.5rem !important;   
+}
+
+input{
+    height: 17px !important;
+}
+
+.normal-text{
+    font-size: 0.9rem;
+}
+
+.authentication{
+    font-family: prata;
+    height: 100vh;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center !important;
+    justify-content: center;
+}
+
+.authentication-form{
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none !important;
+}
+
+.spinner-parent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.5;
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+}
+
+.spinner-border{
+    width: 3rem !important;
+    height: 3rem !important;
+    color: rgb(208, 208, 208) !important;
+}
+
+@media screen and (min-width: 320px){
+    .box{
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
 }

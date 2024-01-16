@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Login } from "./pages/Login";
+import { Home } from "./pages/Home/Home";
+import { SignUp } from "./pages/SignUp";
 
 function App() {
+  const {loading} = useSelector(state => state.alerts)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      {loading && (<div className="spinner-parent">
+        <div className="spinner-border" role="status"></div>
+      </div>)}
+      <Toaster position="top-center" reverseOrder={false}></Toaster>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login /> }/>
+        <Route path="/signup" element={<SignUp />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
