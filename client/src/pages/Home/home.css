@@ -1,0 +1,336 @@
+*{
+    font-family: "Prata" !important;
+}
+
+.homepageUl {
+    font-family: 'Prata', serif;
+    font-size: 24px;
+    color: rgba(40, 40, 40, 0.95);
+    list-style-type: none;
+    text-align: left;
+    text-transform: uppercase;
+    line-height: 1em;
+    margin-bottom: 6%;
+}
+
+.pink-part {
+    background-color: #F3E9E3;
+    width: 60%;
+    padding-top: 5.5%;
+    padding-bottom: 5.5%;
+    position: relative; /* Важно, чтобы родительский элемент pink-part был позиционирован */
+}
+
+/* Стили для маркеров списка (круговые маркеры) */
+ul {
+    padding-left: 0 !important;
+}
+
+li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+li::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 0;
+    width: 5px;
+    height: 5px;
+    background-color: rgba(40, 40, 40, 0.95);
+    border-radius: 50%;
+}
+
+.text-pink-part h1{
+    color: #000;
+    font-family: "Prata";
+    font-size: 32px;
+    line-height: 1.25em;
+    text-transform: uppercase;
+    margin-bottom: 6%;
+}
+
+.pic1-cont{
+    width: fit-content;
+    position: absolute;
+    top: 10%;
+    left: 55%;
+    z-index: 1; /* Помещаем изображение над блоком pink-part */
+}
+
+.primary{
+    display: flex;
+    position: relative;
+}
+
+/* try */
+
+.pic1-cont img {
+    width: 90%; /* Для заполнения всей площади pic1-cont */
+    height: auto;
+}
+
+.about-pink-part {
+    position: relative;
+    padding-left: 11%;
+    /* z-index: 2; Чтобы содержимое about-pink-part находилось над изображением */
+}
+
+.buttons-pink-part{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+/* кнопки */
+.MuiButtonBase-root{
+    font-size: 18px !important;
+    width: 50%;
+    padding: 7px !important;
+}
+
+/* photos */
+.photos{
+    margin-top: 4.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FAFAFA;
+    margin-bottom: 4.5%;
+}
+
+.photos h1{
+    text-transform: uppercase;
+    margin-bottom: 4.5%;
+}
+
+.one-of-one{
+    width: 47%; /* Для заполнения всей площади pic1-cont */
+    height: auto;
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 4%;
+  }
+
+  .one-of-four {
+    width: 47%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  
+  .one-of-four img {
+    width: 40%; 
+    margin-bottom: 2.5em; 
+
+  }
+  
+  .one-of-one img {
+    width: 87%; 
+  }
+
+  /* вторая пинк штука */
+.main-text{
+    background-color: #FAFAFA;
+    display: flex;
+    position: relative;
+    margin-bottom: 4.5%;
+}
+
+.pink2{
+    width: 60%;
+    margin-left: auto; /* Прикрепление к правому краю */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F3E9E3;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    position: relative; /* Важно, чтобы родительский элемент pink-part был позиционирован */
+}
+
+.line-main-text{
+    border: 2px solid rgb(40, 40, 40, 95%);
+    width: 96%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5%;
+}
+
+.logo-in-main-text{
+    margin-bottom: 5%;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    left: 12%;
+}
+
+.text-main{
+    width: 65%;
+    text-indent: 2em;
+    font-size: 24px;
+    position: relative;
+    left: 12%;
+}
+
+.text-main p{
+    overflow: visible;
+    line-height: 1.1em;
+}
+
+.black-and-white{
+    width: fit-content;
+    position: absolute;
+    top: 12%;
+    left: 5%;
+    z-index: 1; 
+}
+
+@media screen and (width <= 1280px){
+   .b-w-img{
+    width: 85%;
+   }
+
+   .black-and-white{
+    top:16.5%
+   }
+}
+
+@media screen and (width <= 1024px){
+    .b-w-img{
+     width: 85%;
+    }
+ 
+    .black-and-white{
+     top:16.5%
+    }
+
+    .buttons-pink-part{
+        gap: 0;
+    }
+
+    .pic1-cont{
+        top: 15%;
+    }
+
+    .b-w-img{
+        width: 72%;
+    }
+
+    .black-and-white {
+        top: 24.5%;
+    }
+ }
+
+ @media screen and (min-width <= 768px){
+    .black-and-white{
+     top:16.5%
+    }
+
+    .buttons-pink-part{
+        gap: 0;
+    }
+
+    .pic1-cont{
+        top: 15%;
+        width: 46%;
+        left: 60%;
+    }
+
+    .pink-part {
+        width: 70%;
+    }
+
+    .text-pink-part h1 {
+        font-size: 30px;
+    }
+
+    .homepageUl {
+        font-size: 20px;
+    }
+
+    .MuiButtonBase-root {
+        font-size: 16px !important;
+        width: 60%;
+    }
+
+    .one-of-one img {
+        width: 92%;
+    }
+
+    .text-main {
+        width: 69%;
+        font-size: 18px;
+        left: 12%;
+    }
+
+    .pink2 {
+        width: 70%;
+    }
+
+    .b-w-img{
+        width: 60%;
+    }
+
+    .pic1-cont img {
+        width: 100%;
+        height: auto;
+    }
+ }
+
+ @media screen and (width <= 480px){
+    *
+    {overflow-x: hidden;}
+    .pic1-cont img{
+        display: none;
+    }
+
+    .pink-part {
+        width: 100%;
+    }
+
+    .one-of-one {
+        width: 54%;
+    }
+
+    .MuiButtonBase-root {
+        font-size: 16px !important;
+        width: 80%;
+    }
+
+    .b-w-img{
+display: none;    
+}
+
+.pink2 {
+    width: 100%;
+}
+
+.logo-in-main-text {
+    left: 3%;
+}
+
+.text-main {
+    width: 90%;
+    text-indent: 2em;
+    font-size: 18px;
+    position: relative;
+    left: 4%;
+}
+
+.text-main p {
+    overflow-y: hidden;
+}
+ }
+
+
+
