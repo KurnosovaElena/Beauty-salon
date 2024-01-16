@@ -14,8 +14,9 @@
     color: #590B11 !important;
 }
 
-.card-title{
+.card-title {
     font-size: 1.4rem;
+    overflow-y: hidden;
     font-weight: bold;
     font-family: prata;
     color: #590B11 !important;
