@@ -6,6 +6,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const moment = require('moment')
 const User = require("./models/userSchema");
+const Master = require("./models/masterSchema");
 const authMiddleware = require("./middlewares/authMiddleware");
 
 
@@ -139,4 +140,25 @@ app.post("/login", async (req, res) => {
         .send({ message: "Error applying master account", success: false, error });
     }
   });
+
+  app.get("/get-all-users",authMiddleware, async (req, res) => {
+    try {
+      const users = await User.find({});
+      res.status(201).send({ message: "User", success: true, data: users });
+    } catch (error) {
+      res
+        .status(500)
+        .send({ message: "Error getting users", success: false, error });
+    }
+  });
   
+  app.get("/get-all-masters",authMiddleware, async (req, res) => {
+    try {
+      const masters = await Master.find({});
+      res.status(201).send({ message: "User", success: true, data: masters });
+    } catch (error) {
+      res
+        .status(500)
+        .send({ message: "Error getting users", success: false, error });
+    }
+  });
