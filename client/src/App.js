@@ -3,6 +3,7 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { Login } from "./pages/Login";
 import { Home } from "./pages/Home/Home";
 import { SignUp } from "./pages/SignUp";
+import { useSelector } from "react-redux";
 
 function App() {
   const {loading} = useSelector(state => state.alerts)
