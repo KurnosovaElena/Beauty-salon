@@ -1,0 +1,35 @@
+.notifications-main-div{
+    margin-left: 4.2%;
+    margin-bottom: 4.5%;
+    margin-right: 4%;
+
+}
+
+.card-text-app{
+    overflow-y: hidden;
+}
+
+.notifications-main-div h1{
+    margin-top: 2.5%;
+    margin-bottom: 2%;
+    overflow: hidden;
+}
+
+.link-button-1, .link-button-2{
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+.link-button-1 h1, .link-button-2 h1{
+    font-size: 24px !important;
+    text-decoration: underline;
+}
+
+.card-box{
+    border: 2px solid #590B11 !important;
+    border-radius: 5px;
+    padding: 7px;
+    cursor: pointer;
+    margin-bottom: 0.5%;
+}
