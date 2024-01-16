@@ -220,4 +220,15 @@ app.post("/login", async (req, res) => {
         .send({ message: "Error applying master account", success: false, error });
     }
   });
+
+  app.get("/get-all-approved-masters",authMiddleware, async (req, res) => {
+    try {
+      const masters = await Master.find({status : 'approved'});
+      res.status(201).send({ message: "User", success: true, data: masters });
+    } catch (error) {
+      res
+        .status(500)
+        .send({ message: "Error getting users", success: false, error });
+    }
+  });
   
