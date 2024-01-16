@@ -231,4 +231,15 @@ app.post("/login", async (req, res) => {
         .send({ message: "Error getting users", success: false, error });
     }
   });
-  
+  app.post("/get-master-info-by-id", async (req, res) => {
+    try {
+      const master = await Master.findOne({ _id: req.body.masterId });
+      res
+      .status(200)
+      .send({ message: "Master info feached successfully", success: true, data: master });    
+    } catch (error) {
+      res
+      .status(500)
+      .send({ message: "Error getting master info", success: false, error });
+    }
+  });
