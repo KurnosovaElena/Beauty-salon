@@ -195,3 +195,29 @@ app.post("/login", async (req, res) => {
         .send({ message: "Error applying master account", success: false, error });
     }
   });
+
+  app.post("/change-master-status",authMiddleware, async (req, res) => {
+    try {
+      const {masterId, status, userId} = req.body;
+      const master = await Master.findByIdAndUpdate(masterId, {
+        status,
+      })
+      const user = await User.findOne({ _id: userId })
+      const unseenNotifications = user.unseenNotifications;
+      unseenNotifications.push({
+        type: "new-master-request-changed",
+        message: `Your master account has been ${status}`,
+        onclickPath: "/notifications",
+      })
+      user.isMaster = status === 'approved' ? true : false
+      user.save() 
+      res
+        .status(200)
+        .send({ message: "Master status updated successfully", success: true, data: master });
+    } catch (error) {
+      res
+        .status(500)
+        .send({ message: "Error applying master account", success: false, error });
+    }
+  });
+  
