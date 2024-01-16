@@ -1,0 +1,168 @@
+footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #fafafa;
+}
+
+.cont {
+    display: flex;
+}
+
+.cont i {
+    color: #590B11;
+    margin-right: 10%;
+    font-size: 44px;
+}
+
+.about {
+    width: 34%;
+    font-size: 1.5rem;
+    font-family: "Prata";
+    margin-left: 4%;
+}
+
+.about p {
+    margin-bottom: 2.5%;
+    line-height: 1.1em;
+}
+
+.p-contacts {
+    margin-top: 0.5em;
+    margin-bottom: 0.25em;
+}
+
+.contacts-footer {
+    font-family: "Prata";
+    width: 40%;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contacts-footer h1 {
+    margin-bottom: 12%;
+}
+
+.logo-footer {
+    width: 20%;
+    font-size: 1.5rem;
+    font-family: "Prata";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about h1,
+.contacts-footer h1 {
+    overflow: visible;
+    line-height: 0.8em;
+    color: #590B11;
+    font-size: 32px;
+    white-space: pre-line;
+}
+
+.logo-line-footer {
+    margin-top: 1.59%;
+    border: 2px solid #590B11;
+    width: 96%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (width <= 1024px){
+
+    .about {
+        width: 32%;
+        font-size: 1.3rem;
+    }
+
+    .contacts-footer {
+        width: 45%;
+        font-size: 1.2rem;
+    }
+ }
+
+ @media screen and (width <= 768px){
+
+    .about {
+        display: flex;
+        width: 100%;
+        font-size: 1.5rem;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 37%;
+    }
+
+    .contacts-footer {
+        width: 45%;
+        font-size: 1.2rem;
+    }
+
+    footer {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .logo-footer {
+        width: 35%;
+        font-size: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2%;
+        margin-bottom: 5%;
+    }
+
+    .contacts-footer {
+        width: 100%;
+        font-size: 1.2rem;
+    }
+
+    .contacts-footer h1 {
+        margin-bottom: 4%;
+    }
+
+ }
+
+ @media screen and (width <= 480px){
+
+    .contacts-footer h1 {
+        font-size: 1.2rem;
+    }
+
+    .about {
+        display: flex;
+        width: 100%;
+        font-size: 1.3rem;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 17.5%;        
+    }
+
+    .about h1, .contacts-footer h1 {
+        line-height: none;
+        color: #590B11;
+        font-size: 32px;
+        white-space: pre-line;
+    }
+    
+    .about h1{
+        font-size: 22px;
+        z-index: 2;
+
+    }
+
+    .logo-footer {
+        width: 100%;
+        font-size: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2%;
+        margin-bottom: 6%;
+    }
+ }
