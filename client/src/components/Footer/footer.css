@@ -166,3 +166,49 @@ footer {
         margin-bottom: 6%;
     }
  }
+
+ @media screen and (width <= 320px){
+
+    .cont i{
+        margin-right: 5% !important;
+        font-size: 35px;
+    }
+
+    .p-contacts{
+        font-size: 0.8em;
+    }
+        
+
+    .about {
+        display: flex;
+        width: 100%;
+        font-size: 0.8rem;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 17.5%;        
+    }
+
+    .about h1, .contacts-footer h1 {
+        line-height: none;
+        color: #590B11;
+        font-size: 30px;
+        white-space: pre-line;
+    }
+    
+    .about h1{
+        font-size: 20px;
+        z-index: 2;
+
+    }
+
+    .logo-footer {
+        width: 90%;
+        font-size: 1.3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2%;
+        margin-bottom: 6%;
+    }
+ }
+

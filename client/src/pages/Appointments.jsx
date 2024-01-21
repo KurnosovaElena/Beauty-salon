@@ -56,7 +56,7 @@ export function Appointments(props) {
           <Link style={{pointerEvents: "none", cursor:"default", textDecoration:"none", color:"inherit"
           }} to={`/users/${record.userId._id}`}>
             <h1 className="card-text-app">
-              {`${record.userInfo.name}`}
+              {`${record.masterInfo.firstName} ${record.masterInfo.lastName}`}
             </h1>
           </Link>
         ),
@@ -66,7 +66,7 @@ export function Appointments(props) {
         dataIndex: "masterId",
         render: (text, record) => (
           <h1 className="card-text-app">
-            {`${record.masterId.phoneNumber}`}
+            {`${record.masterInfo.phoneNumber}`}
           </h1>
         ),
       },

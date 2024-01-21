@@ -32,7 +32,7 @@ export function NotificationsMainDiv({ value, handleChange, markAllAsSeen, delet
             value={value}
             onChange={handleChange}
           >
-            <CustomTab label="непросмотренные" value={0} />
+            <CustomTab label="не просмотренные" value={0} />
             <CustomTab label="просмотренные" value={1} />
           </CustomTabs>
           {value === 0 && (

@@ -15,5 +15,5 @@
 .users-list-main-div h1{
     margin-top: 2.5%;
     margin-bottom: 2%;
-    overflow: hidden;
+    /* overflow: hidden; */
 }

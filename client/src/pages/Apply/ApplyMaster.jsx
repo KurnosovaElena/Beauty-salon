@@ -14,7 +14,7 @@ export function ApplyMaster(props) {
     const {user } = useSelector(state => state.user);
     const navigate = useNavigate();
     const handleSubmit = async() => {
-      
+    // Собираем значения инпутов
     const formData = {
       firstName: document.querySelector('input[name="firstName"]').value,
       lastName: document.querySelector('input[name="lastName"]').value,
@@ -46,15 +46,15 @@ export function ApplyMaster(props) {
         toast.error("Something went wrong", {className:'toast-notification'});
     }
 
-    document.querySelector('input[name="firstName"]').value = '';
-    document.querySelector('input[name="lastName"]').value = '';
-    document.querySelector('input[name="phoneNumber"]').value = '';
-    document.querySelector('input[name="website"]').value = '';
-    document.querySelector('input[name="address"]').value = '';
-    document.querySelector('input[name="specialization"]').value = '';
-    document.querySelector('input[name="experience"]').value = '';
-    document.querySelector('input[name="feePerProcedure"]').value = '';
-    document.querySelector('input[name="timings"]').value = '';
+    // document.querySelector('input[name="firstName"]').value = '';
+    // document.querySelector('input[name="lastName"]').value = '';
+    // document.querySelector('input[name="phoneNumber"]').value = '';
+    // document.querySelector('input[name="website"]').value = '';
+    // document.querySelector('input[name="address"]').value = '';
+    // document.querySelector('input[name="specialization"]').value = '';
+    // document.querySelector('input[name="experience"]').value = '';
+    // document.querySelector('input[name="feePerProcedure"]').value = '';
+    // document.querySelector('input[name="timings"]').value = '';
   };
 
   return (

@@ -40,7 +40,7 @@ export function SignUp(props) {
     event.preventDefault();
     axios
       .post("http://localhost:3001/register", { name, email,  password })
-      .then(() => {
+      .then((response) => {
         dispatch(hideLoading());
         toast.success(response.data.message, {className:'toast-notification'})
         setEmail("");
@@ -52,7 +52,7 @@ export function SignUp(props) {
       .catch((error) => {
         dispatch(hideLoading());
         toast.error("Error registration",{className:'toast-notification'})
-        console.log("Unable to register user");
+        console.error(error);
       });
   };
 

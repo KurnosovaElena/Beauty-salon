@@ -19,6 +19,7 @@ export function Menu({ children }) {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   const navigate = useNavigate();
+  const [menuState, setMenuState] = useState(false);
   const location = useLocation();
   const { user } = useSelector((state) => state.user);
   useEffect(() => {
@@ -26,18 +27,24 @@ export function Menu({ children }) {
     const menuElement = document.querySelector('.menu');
 
     if (burgerButton && menuElement) {
-      setMenuOpen(menuElement.classList.contains('open'));
-
+      setMenuState((prevMenuState) => {
+        const newMenuState = !prevMenuState;
+        menuElement.classList.toggle('open', newMenuState);
+        return newMenuState;
+      });
       burgerButton.addEventListener('click', function () {
-        setMenuOpen(!isMenuOpen);
-        menuElement.classList.toggle('open', !isMenuOpen);
+        setMenuState((prevMenuState) => {
+          const newMenuState = !prevMenuState;
+          menuElement.classList.toggle('open', newMenuState);
+          return newMenuState;
+        });
       });
     }
 
     return () => {
       if (burgerButton) {
         burgerButton.removeEventListener('click', function () {
-          setMenuOpen(false);
+          setMenuState(false);
           menuElement.classList.remove('open');
         });
       }

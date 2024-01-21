@@ -83,7 +83,6 @@ export function MasterForm({handleSubmit , headerMain, initivalValues}) {
                   style={{
                     display: "flex",
                     flexDirection: "сolumn",
-                    width: "18%",
                   }}
                 >
                   <span style={{color: "#590B11"}}>Timing</span>

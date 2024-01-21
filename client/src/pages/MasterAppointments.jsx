@@ -85,15 +85,6 @@ export function MasterAppointments(props) {
         ),
       },
       {
-        title: "Number",
-        dataIndex: "masterId",
-        render: (text, record) => (
-          <h1 className="card-text-app">
-            {`${record.masterId.phoneNumber}`}
-          </h1>
-        ),
-      },
-      {
         title: "Date & Time",
         dataIndex: "createdAt",
         render: (text, record) => (

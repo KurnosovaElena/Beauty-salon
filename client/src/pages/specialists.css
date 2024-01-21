@@ -1,85 +1,84 @@
 .sp, .appointment-booking-div{
-    margin-left: 4%;
-    margin-right: 4%;
-    height: 100%;
-    position: relative;
-    background-color: #FAFAFA;
-    padding-bottom: 4.5%;
+  margin-left: 4%;
+  margin-right: 4%;
+  height: 100%;
+  position: relative;
+  background-color: #FAFAFA;
+  padding-bottom: 4.5%;
 }
 
 .masters-dela{
-    display: flex !important;
-    flex-direction: row;
+  display: flex !important;
+  flex-direction: row;
 }
 
 .sp h1 {
-  margin-bottom: 2%;
-  overflow-y: hidden;
+margin-bottom: 2%;
+overflow-y: hidden;
 }
 
 .pic-data{
-    display: flex !important; 
-    flex-direction: column !important;
+  display: flex !important; 
+  flex-direction: column !important;
 }
 
 .under-hr{
-    margin-top: 4%;
+  margin-top: 4%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root{
+  width: 300px;
+}
+
+.card-text-app{
+  font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .sp,
+  .appointment-booking-div {
+    margin-left: 2%;
+    margin-right: 2%;
+    background-color: #FAFAFA;
+    padding-bottom: 2.5%;
+  }
+
+  .masters-dela {
+    display: flex !important;
+    flex-direction: column;
+  }
+
+  .sp h1 {
+    margin-bottom: 2%;
+  }
+
+  .pic-data {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .under-hr {
+    margin-top: 2%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root{
-    width: 300px;
-}
-
-.card-text-app{
-    font-size: 16px;
-}
-
-@media screen and (max-width: 768px) {
-    .sp,
-    .appointment-booking-div {
-      margin-left: 2%;
-      margin-right: 2%;
-      background-color: #FAFAFA;
-      padding-bottom: 2.5%;
-    }
-  
-    .masters-dela {
-      display: flex !important;
-      flex-direction: column;
-    }
-  
-    .sp h1 {
-      margin-bottom: 2%;
-    }
-  
-    .pic-data {
-      display: flex !important;
-      flex-direction: column !important;
-    }
-  
-    .under-hr {
-      margin-top: 2%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-  
-    .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
-      width: 100%;
-    }
-  
-    .card-text-app {
-      font-size: 14px;
-    }
-
-    .masters-dela{
-      gap: 0.7em
-    }
   }
 
-  
+  .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
+    width: 100%;
+  }
+
+  .card-text-app {
+    font-size: 14px;
+  }
+
+  .masters-dela{
+    gap: 0.7em
+  }
+}
+

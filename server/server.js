@@ -32,7 +32,7 @@ mongoose
     console.log("Error", error);
   });
 
-//middkeware
+//middleware
 app.use(bodyParser.json());
 app.use(cors());
 
@@ -115,6 +115,7 @@ app.post("/get-user-info-by-id", authMiddleware, async (req, res) => {
     
   }
 });
+
 app.get("/get-all-users",authMiddleware, async (req, res) => {
   try {
     const users = await User.find({});
@@ -210,7 +211,6 @@ app.post("/change-master-status",authMiddleware, async (req, res) => {
     })
     user.isMaster = status === 'approved' ? true : false
     user.save()
-
     res
       .status(200)
       .send({ message: "Master status updated successfully", success: true, data: master });
@@ -231,6 +231,7 @@ app.get("/get-all-approved-masters",authMiddleware, async (req, res) => {
       .send({ message: "Error getting users", success: false, error });
   }
 });
+
 app.post("/get-master-info-by-id", async (req, res) => {
   try {
     const master = await Master.findOne({ _id: req.body.masterId });
@@ -243,7 +244,6 @@ app.post("/get-master-info-by-id", async (req, res) => {
     .send({ message: "Error getting master info", success: false, error });
   }
 });
-//
 
 app.post("/book-appointment", authMiddleware, async (req, res) => {
   try {
@@ -307,7 +307,8 @@ app.post("/check-booking-avilability", authMiddleware, async (req, res) => {
 app.get("/get-appointments-by-user-id", authMiddleware, async (req, res) => {
   try {
     const appointments = await Appointment.find({ id: req.body.userId })
-      .populate('masterId'); 
+      .populate('masterId');
+      console.log(appointments) 
     res.status(201).send({ message: "appointments get successfully", success: true, data: appointments });
   } catch (error) {
     res.status(500).send({ message: "Error getting appointments", success: false, error });
@@ -316,7 +317,7 @@ app.get("/get-appointments-by-user-id", authMiddleware, async (req, res) => {
 
 app.get("/get-appointments-by-master-id", authMiddleware, async (req, res) => {
   try {
-    const master = await Master.findOne({id: req.body.userId})
+    const master = await Master.findOne({_id: req.body._id})
     console.log(master)
     const appointments = await Appointment.find({ masterId: master._id })
       .populate('masterId'); 

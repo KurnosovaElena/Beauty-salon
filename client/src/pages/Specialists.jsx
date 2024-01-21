@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { Menu } from "../components/Menu/Menu";
-import { Footer } from "../components/Footer/Footer";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import "./specialists.css";
@@ -51,7 +50,6 @@ export function Specialists(props) {
               
               </div>
             </Menu>
-            <Footer></Footer>       
         </>
     )
 }

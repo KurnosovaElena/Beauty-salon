@@ -48,15 +48,6 @@ export function UsersList(props) {
             title: 'Created At',
             dataIndex: 'createdAt'
         },
-        {
-            title: 'Actions',
-            dataIndex: 'actions',
-            render: (text, record) => (
-                <div className='d-flex'>
-                    <h1 className=''>Block</h1>
-                </div>
-            )
-        }
     ]
 
     return (
@@ -79,11 +70,6 @@ export function UsersList(props) {
                                     <TableCell>{user.name}</TableCell>
                                     <TableCell>{user.email}</TableCell>
                                     <TableCell>{user.createdAt}</TableCell>
-                                    <TableCell>
-                                        <div className='d-flex'>
-                                            <h1 className='action-button'>Block</h1>
-                                        </div>
-                                    </TableCell>
                                 </TableRow>
                             ))}
                         </TableBody>

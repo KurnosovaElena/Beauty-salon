@@ -288,8 +288,6 @@ li::before {
  }
 
  @media screen and (width <= 480px){
-    *
-    {overflow-x: hidden;}
     .pic1-cont img{
         display: none;
     }
@@ -331,6 +329,56 @@ display: none;
     overflow-y: hidden;
 }
  }
+ @media screen and (width <= 320px){
+    .pic1-cont img{
+        display: none;
+    }
 
+    .homepageUl{
+        font-size: 20px;
+    }
+
+    .pink-part {
+        width: 100%;
+    }
+
+    .text-pink-part h1{
+        font-size: 22px !important;
+    }
+
+    .one-of-one {
+        width: 54%;
+    }
+
+    .MuiButtonBase-root {
+        font-size: 14px !important;
+        width: 80%;
+    }
+
+    .b-w-img{
+display: none;    
+}
+
+.about-pink-part{
+    padding: 3%;
+}
+
+.pink2 {
+    width: 100%;
+}
+
+.logo-in-main-text {
+    left: 3%;
+}
+
+.text-main {
+    width: 90%;
+    text-indent: 2em;
+    font-size: 14px;
+    position: relative;
+    left: 4%;
+}
+
+ }
 
 
