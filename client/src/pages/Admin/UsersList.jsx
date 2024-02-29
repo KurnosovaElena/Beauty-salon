@@ -4,8 +4,10 @@ import { useDispatch } from "react-redux"
 import {showLoading, hideLoading} from "../../redux/alertsSlice"
 import axios from 'axios';
 import { Menu } from "../../components/Menu/Menu";
+import {OrButton} from "../../components/OrButton"
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
-
+import { jsPDF } from "jspdf";
+import 'jspdf-autotable';
 
 export function UsersList(props) {
     const [users, setUsers] = useState([])
@@ -30,6 +32,26 @@ export function UsersList(props) {
         }
 
     }
+
+    const exportPDF = () => {
+        const doc = new jsPDF();
+    
+        const tableColumn = ["Name", "Email", "Created At"];
+        const tableRows = [];
+    
+        users.forEach(user => {
+            const userData = [
+                user.name,
+                user.email,
+                user.createdAt,
+            ];
+            tableRows.push(userData);
+        });
+    
+        doc.autoTable(tableColumn, tableRows, { startY: 20 });
+        doc.text("Список пользователей", 14, 15);
+        doc.save("users-list.pdf");
+    };
     
     useEffect(() => {
         getUsersData()
@@ -55,6 +77,12 @@ export function UsersList(props) {
             <Menu>
                 <div className="users-list-main-div">
                     <h1 className='page-header-list'>Лист пользователей</h1>
+                    <OrButton
+                        color="#590B11" 
+                        text="Экспорт в PDF"
+                        width="200px" 
+                        onClick={exportPDF} 
+                    />
                     <TableContainer component={Paper}>
                     <Table>
                         <TableHead>

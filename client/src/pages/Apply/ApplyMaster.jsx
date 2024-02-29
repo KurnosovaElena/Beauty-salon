@@ -26,7 +26,7 @@ export function ApplyMaster(props) {
       experience: document.querySelector('input[name="experience"]').value,
       feePerProcedure: document.querySelector('input[name="feePerProcedure"]')
         .value,
-      timings: document.querySelector('input[name="timings"]').value, // Подставьте правильное имя поля
+      timings: document.querySelector('input[name="timings"]').value, 
     };
 
     console.log(formData)
